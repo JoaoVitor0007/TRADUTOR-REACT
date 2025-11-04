@@ -1,13 +1,23 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native';
 import { StyleSheet, Text, View, Image } from 'react-native';
+
+
+
+
+
+
+
+
+
 
 export default function ActionCards( {img, titulo, texto} = {}) {
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}>
             <Image style={styles.tinyLogo} source={img} />
             <Text style={styles.titulo}>{titulo}</Text>
             <Text style={styles.subtitulo}>{texto}</Text>
-        </View >
+        </TouchableOpacity >
     )
 }
 
