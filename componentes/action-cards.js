@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import { TouchableOpacity } from 'react-native';
 import { StyleSheet, Text, View, Image } from 'react-native';
@@ -11,9 +12,10 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 
-export default function ActionCards( {img, titulo, texto} = {}) {
+export default function ActionCards( {img, titulo, texto, tela} = {}) {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(tela)}>
             <Image style={styles.tinyLogo} source={img} />
             <Text style={styles.titulo}>{titulo}</Text>
             <Text style={styles.subtitulo}>{texto}</Text>
